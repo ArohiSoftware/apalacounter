@@ -15,7 +15,7 @@ export const loginUser = createAsyncThunk('user/login', async (credentials, { re
     const response = await axiosInstance.post(`/auth/login`, credentials);
     return response.data;
   } catch (error) {
-    return rejectWithValue(error.response.data.message || error.message); // Ensure error message is passed
+    return rejectWithValue(error.response.data.error || error.message); // Ensure error message is passed
   }
 });
 

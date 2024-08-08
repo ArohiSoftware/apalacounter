@@ -6,7 +6,7 @@ import axiosInstance from '../../axiosConfig';
 export const fetchOrders = createAsyncThunk('orders/fetchOrders', async () => {
   try {
     const response = await axiosInstance.get('/order/getCounterOrder');
-    console.log(response.data)
+    console.log('order fetched!!')
     return response.data.data;  // Return the data directly from axios response
   } catch (error) {
     throw new Error(error.response?.data?.message || 'Failed to fetch orders');
